@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+
+  orthanc:
+    restart: always
+    image: mailu_domainfetcher
+    volumes:
+      - /opt/gemail:/root/.getmail/:ro
+      - /opt/ssmtp/:/etc/ssmtp/:ro
+    environment:
+      - GETMAIL_TYPE=MultidropPOP3Retriever # see README for avalaible types
+      - GETMAIL_HOST=multipop.dominio.cu
+      - GETMAIL_USERNAME=domainpop_user
+      - GETMAIL_PASSWORD=yourdomainpopassword
+      - GETMAIL_PORT=110
+      - GETMAIL_CHECK_INTERVAL=30
+      - SSMTP_HOST=smtp.chipojosoft.com

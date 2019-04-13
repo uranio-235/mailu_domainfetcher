@@ -12,6 +12,7 @@ server = $GETMAIL_HOST
 port = $GETMAIL_PORT
 username = $GETMAIL_USERNAME
 password = $GETMAIL_PASSWORD
+envelope_recipient = delivered-to:1
 
 [destination]
 type = MDA_external
@@ -38,7 +39,7 @@ UseSTARTTLS=No
 
 
 # fuego
-echo "intervalor de chequeo $GETMAIL_CHECK_INTERVAL segundos"
+echo "intervalo de chequeo $GETMAIL_CHECK_INTERVAL segundos"
 while true
 do
    date '+%d/%m/%Y %H:%M:%S'
